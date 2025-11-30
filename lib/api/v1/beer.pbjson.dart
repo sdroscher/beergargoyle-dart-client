@@ -79,12 +79,44 @@ const BeerStyle$json = {
   '2': [
     {'1': 'id', '3': 1, '4': 1, '5': 4, '10': 'id'},
     {'1': 'name', '3': 2, '4': 1, '5': 9, '10': 'name'},
+    {'1': 'bjcp_style', '3': 3, '4': 1, '5': 11, '6': '.api.v1.BeerStyleBJCP', '10': 'bjcpStyle'},
   ],
 };
 
 /// Descriptor for `BeerStyle`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List beerStyleDescriptor = $convert.base64Decode(
-    'CglCZWVyU3R5bGUSDgoCaWQYASABKARSAmlkEhIKBG5hbWUYAiABKAlSBG5hbWU=');
+    'CglCZWVyU3R5bGUSDgoCaWQYASABKARSAmlkEhIKBG5hbWUYAiABKAlSBG5hbWUSNAoKYmpjcF'
+    '9zdHlsZRgDIAEoCzIVLmFwaS52MS5CZWVyU3R5bGVCSkNQUgliamNwU3R5bGU=');
+
+@$core.Deprecated('Use beerStyleBJCPDescriptor instead')
+const BeerStyleBJCP$json = {
+  '1': 'BeerStyleBJCP',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+    {'1': 'name', '3': 2, '4': 1, '5': 9, '10': 'name'},
+    {'1': 'category', '3': 3, '4': 1, '5': 9, '10': 'category'},
+    {'1': 'family', '3': 4, '4': 1, '5': 11, '6': '.api.v1.BeerStyleFamily', '10': 'family'},
+  ],
+};
+
+/// Descriptor for `BeerStyleBJCP`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List beerStyleBJCPDescriptor = $convert.base64Decode(
+    'Cg1CZWVyU3R5bGVCSkNQEg4KAmlkGAEgASgJUgJpZBISCgRuYW1lGAIgASgJUgRuYW1lEhoKCG'
+    'NhdGVnb3J5GAMgASgJUghjYXRlZ29yeRIvCgZmYW1pbHkYBCABKAsyFy5hcGkudjEuQmVlclN0'
+    'eWxlRmFtaWx5UgZmYW1pbHk=');
+
+@$core.Deprecated('Use beerStyleFamilyDescriptor instead')
+const BeerStyleFamily$json = {
+  '1': 'BeerStyleFamily',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 4, '10': 'id'},
+    {'1': 'name', '3': 2, '4': 1, '5': 9, '10': 'name'},
+  ],
+};
+
+/// Descriptor for `BeerStyleFamily`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List beerStyleFamilyDescriptor = $convert.base64Decode(
+    'Cg9CZWVyU3R5bGVGYW1pbHkSDgoCaWQYASABKARSAmlkEhIKBG5hbWUYAiABKAlSBG5hbWU=');
 
 @$core.Deprecated('Use breweryDescriptor instead')
 const Brewery$json = {

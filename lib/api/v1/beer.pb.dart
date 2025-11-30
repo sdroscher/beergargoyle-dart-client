@@ -306,6 +306,7 @@ class BeerStyle extends $pb.GeneratedMessage {
   factory BeerStyle({
     $fixnum.Int64? id,
     $core.String? name,
+    BeerStyleBJCP? bjcpStyle,
   }) {
     final $result = create();
     if (id != null) {
@@ -313,6 +314,9 @@ class BeerStyle extends $pb.GeneratedMessage {
     }
     if (name != null) {
       $result.name = name;
+    }
+    if (bjcpStyle != null) {
+      $result.bjcpStyle = bjcpStyle;
     }
     return $result;
   }
@@ -323,6 +327,7 @@ class BeerStyle extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'BeerStyle', package: const $pb.PackageName(_omitMessageNames ? '' : 'api.v1'), createEmptyInstance: create)
     ..a<$fixnum.Int64>(1, _omitFieldNames ? '' : 'id', $pb.PbFieldType.OU6, defaultOrMaker: $fixnum.Int64.ZERO)
     ..aOS(2, _omitFieldNames ? '' : 'name')
+    ..aOM<BeerStyleBJCP>(3, _omitFieldNames ? '' : 'bjcpStyle', subBuilder: BeerStyleBJCP.create)
     ..hasRequiredFields = false
   ;
 
@@ -346,6 +351,175 @@ class BeerStyle extends $pb.GeneratedMessage {
   @$core.pragma('dart2js:noInline')
   static BeerStyle getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<BeerStyle>(create);
   static BeerStyle? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $fixnum.Int64 get id => $_getI64(0);
+  @$pb.TagNumber(1)
+  set id($fixnum.Int64 v) { $_setInt64(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get name => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set name($core.String v) { $_setString(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasName() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearName() => clearField(2);
+
+  @$pb.TagNumber(3)
+  BeerStyleBJCP get bjcpStyle => $_getN(2);
+  @$pb.TagNumber(3)
+  set bjcpStyle(BeerStyleBJCP v) { setField(3, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasBjcpStyle() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearBjcpStyle() => clearField(3);
+  @$pb.TagNumber(3)
+  BeerStyleBJCP ensureBjcpStyle() => $_ensure(2);
+}
+
+class BeerStyleBJCP extends $pb.GeneratedMessage {
+  factory BeerStyleBJCP({
+    $core.String? id,
+    $core.String? name,
+    $core.String? category,
+    BeerStyleFamily? family,
+  }) {
+    final $result = create();
+    if (id != null) {
+      $result.id = id;
+    }
+    if (name != null) {
+      $result.name = name;
+    }
+    if (category != null) {
+      $result.category = category;
+    }
+    if (family != null) {
+      $result.family = family;
+    }
+    return $result;
+  }
+  BeerStyleBJCP._() : super();
+  factory BeerStyleBJCP.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory BeerStyleBJCP.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'BeerStyleBJCP', package: const $pb.PackageName(_omitMessageNames ? '' : 'api.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..aOS(2, _omitFieldNames ? '' : 'name')
+    ..aOS(3, _omitFieldNames ? '' : 'category')
+    ..aOM<BeerStyleFamily>(4, _omitFieldNames ? '' : 'family', subBuilder: BeerStyleFamily.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  BeerStyleBJCP clone() => BeerStyleBJCP()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  BeerStyleBJCP copyWith(void Function(BeerStyleBJCP) updates) => super.copyWith((message) => updates(message as BeerStyleBJCP)) as BeerStyleBJCP;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static BeerStyleBJCP create() => BeerStyleBJCP._();
+  BeerStyleBJCP createEmptyInstance() => create();
+  static $pb.PbList<BeerStyleBJCP> createRepeated() => $pb.PbList<BeerStyleBJCP>();
+  @$core.pragma('dart2js:noInline')
+  static BeerStyleBJCP getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<BeerStyleBJCP>(create);
+  static BeerStyleBJCP? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get name => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set name($core.String v) { $_setString(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasName() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearName() => clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get category => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set category($core.String v) { $_setString(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasCategory() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearCategory() => clearField(3);
+
+  @$pb.TagNumber(4)
+  BeerStyleFamily get family => $_getN(3);
+  @$pb.TagNumber(4)
+  set family(BeerStyleFamily v) { setField(4, v); }
+  @$pb.TagNumber(4)
+  $core.bool hasFamily() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearFamily() => clearField(4);
+  @$pb.TagNumber(4)
+  BeerStyleFamily ensureFamily() => $_ensure(3);
+}
+
+class BeerStyleFamily extends $pb.GeneratedMessage {
+  factory BeerStyleFamily({
+    $fixnum.Int64? id,
+    $core.String? name,
+  }) {
+    final $result = create();
+    if (id != null) {
+      $result.id = id;
+    }
+    if (name != null) {
+      $result.name = name;
+    }
+    return $result;
+  }
+  BeerStyleFamily._() : super();
+  factory BeerStyleFamily.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory BeerStyleFamily.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'BeerStyleFamily', package: const $pb.PackageName(_omitMessageNames ? '' : 'api.v1'), createEmptyInstance: create)
+    ..a<$fixnum.Int64>(1, _omitFieldNames ? '' : 'id', $pb.PbFieldType.OU6, defaultOrMaker: $fixnum.Int64.ZERO)
+    ..aOS(2, _omitFieldNames ? '' : 'name')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  BeerStyleFamily clone() => BeerStyleFamily()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  BeerStyleFamily copyWith(void Function(BeerStyleFamily) updates) => super.copyWith((message) => updates(message as BeerStyleFamily)) as BeerStyleFamily;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static BeerStyleFamily create() => BeerStyleFamily._();
+  BeerStyleFamily createEmptyInstance() => create();
+  static $pb.PbList<BeerStyleFamily> createRepeated() => $pb.PbList<BeerStyleFamily>();
+  @$core.pragma('dart2js:noInline')
+  static BeerStyleFamily getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<BeerStyleFamily>(create);
+  static BeerStyleFamily? _defaultInstance;
 
   @$pb.TagNumber(1)
   $fixnum.Int64 get id => $_getI64(0);

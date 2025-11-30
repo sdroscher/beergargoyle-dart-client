@@ -291,6 +291,8 @@ const CellarFilter$json = {
     {'1': 'maximum_rating', '3': 14, '4': 1, '5': 1, '9': 13, '10': 'maximumRating', '17': true},
     {'1': 'tags', '3': 15, '4': 3, '5': 9, '10': 'tags'},
     {'1': 'added_before', '3': 16, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '10': 'addedBefore'},
+    {'1': 'style_family_id', '3': 17, '4': 1, '5': 4, '9': 14, '10': 'styleFamilyId', '17': true},
+    {'1': 'bjcp_style_id', '3': 18, '4': 1, '5': 9, '9': 15, '10': 'bjcpStyleId', '17': true},
   ],
   '8': [
     {'1': '_brewery_id'},
@@ -307,6 +309,8 @@ const CellarFilter$json = {
     {'1': '_maximum_size'},
     {'1': '_minimum_rating'},
     {'1': '_maximum_rating'},
+    {'1': '_style_family_id'},
+    {'1': '_bjcp_style_id'},
   ],
 };
 
@@ -323,12 +327,14 @@ final $typed_data.Uint8List cellarFilterDescriptor = $convert.base64Decode(
     'bVNpemWIAQESJgoMbWF4aW11bV9zaXplGAwgASgDSAtSC21heGltdW1TaXpliAEBEioKDm1pbm'
     'ltdW1fcmF0aW5nGA0gASgBSAxSDW1pbmltdW1SYXRpbmeIAQESKgoObWF4aW11bV9yYXRpbmcY'
     'DiABKAFIDVINbWF4aW11bVJhdGluZ4gBARISCgR0YWdzGA8gAygJUgR0YWdzEj0KDGFkZGVkX2'
-    'JlZm9yZRgQIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXBSC2FkZGVkQmVmb3JlQg0K'
-    'C19icmV3ZXJ5X2lkQg4KDF9taW5pbXVtX2FidkIOCgxfbWF4aW11bV9hYnZCCwoJX3N0eWxlX2'
-    'lkQhIKEF9taW5pbXVtX3ZpbnRhZ2VCEgoQX21heGltdW1fdmludGFnZUITChFfb3ZlcmR1ZV90'
-    'b19kcmlua0INCgtfaGFkX2JlZm9yZUIKCghfc3BlY2lhbEITChFfbWluaW11bV9xdWFudGl0eU'
-    'IPCg1fbWluaW11bV9zaXplQg8KDV9tYXhpbXVtX3NpemVCEQoPX21pbmltdW1fcmF0aW5nQhEK'
-    'D19tYXhpbXVtX3JhdGluZw==');
+    'JlZm9yZRgQIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXBSC2FkZGVkQmVmb3JlEisK'
+    'D3N0eWxlX2ZhbWlseV9pZBgRIAEoBEgOUg1zdHlsZUZhbWlseUlkiAEBEicKDWJqY3Bfc3R5bG'
+    'VfaWQYEiABKAlID1ILYmpjcFN0eWxlSWSIAQFCDQoLX2JyZXdlcnlfaWRCDgoMX21pbmltdW1f'
+    'YWJ2Qg4KDF9tYXhpbXVtX2FidkILCglfc3R5bGVfaWRCEgoQX21pbmltdW1fdmludGFnZUISCh'
+    'BfbWF4aW11bV92aW50YWdlQhMKEV9vdmVyZHVlX3RvX2RyaW5rQg0KC19oYWRfYmVmb3JlQgoK'
+    'CF9zcGVjaWFsQhMKEV9taW5pbXVtX3F1YW50aXR5Qg8KDV9taW5pbXVtX3NpemVCDwoNX21heG'
+    'ltdW1fc2l6ZUIRCg9fbWluaW11bV9yYXRpbmdCEQoPX21heGltdW1fcmF0aW5nQhIKEF9zdHls'
+    'ZV9mYW1pbHlfaWRCEAoOX2JqY3Bfc3R5bGVfaWQ=');
 
 @$core.Deprecated('Use recommendBeerRequestDescriptor instead')
 const RecommendBeerRequest$json = {

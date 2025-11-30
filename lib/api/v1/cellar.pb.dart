@@ -1280,6 +1280,8 @@ class CellarFilter extends $pb.GeneratedMessage {
     $core.double? maximumRating,
     $core.Iterable<$core.String>? tags,
     $3.Timestamp? addedBefore,
+    $fixnum.Int64? styleFamilyId,
+    $core.String? bjcpStyleId,
   }) {
     final $result = create();
     if (breweryId != null) {
@@ -1330,6 +1332,12 @@ class CellarFilter extends $pb.GeneratedMessage {
     if (addedBefore != null) {
       $result.addedBefore = addedBefore;
     }
+    if (styleFamilyId != null) {
+      $result.styleFamilyId = styleFamilyId;
+    }
+    if (bjcpStyleId != null) {
+      $result.bjcpStyleId = bjcpStyleId;
+    }
     return $result;
   }
   CellarFilter._() : super();
@@ -1353,6 +1361,8 @@ class CellarFilter extends $pb.GeneratedMessage {
     ..a<$core.double>(14, _omitFieldNames ? '' : 'maximumRating', $pb.PbFieldType.OD)
     ..pPS(15, _omitFieldNames ? '' : 'tags')
     ..aOM<$3.Timestamp>(16, _omitFieldNames ? '' : 'addedBefore', subBuilder: $3.Timestamp.create)
+    ..a<$fixnum.Int64>(17, _omitFieldNames ? '' : 'styleFamilyId', $pb.PbFieldType.OU6, defaultOrMaker: $fixnum.Int64.ZERO)
+    ..aOS(18, _omitFieldNames ? '' : 'bjcpStyleId')
     ..hasRequiredFields = false
   ;
 
@@ -1516,6 +1526,24 @@ class CellarFilter extends $pb.GeneratedMessage {
   void clearAddedBefore() => clearField(16);
   @$pb.TagNumber(16)
   $3.Timestamp ensureAddedBefore() => $_ensure(15);
+
+  @$pb.TagNumber(17)
+  $fixnum.Int64 get styleFamilyId => $_getI64(16);
+  @$pb.TagNumber(17)
+  set styleFamilyId($fixnum.Int64 v) { $_setInt64(16, v); }
+  @$pb.TagNumber(17)
+  $core.bool hasStyleFamilyId() => $_has(16);
+  @$pb.TagNumber(17)
+  void clearStyleFamilyId() => clearField(17);
+
+  @$pb.TagNumber(18)
+  $core.String get bjcpStyleId => $_getSZ(17);
+  @$pb.TagNumber(18)
+  set bjcpStyleId($core.String v) { $_setString(17, v); }
+  @$pb.TagNumber(18)
+  $core.bool hasBjcpStyleId() => $_has(17);
+  @$pb.TagNumber(18)
+  void clearBjcpStyleId() => clearField(18);
 }
 
 class RecommendBeerRequest extends $pb.GeneratedMessage {
