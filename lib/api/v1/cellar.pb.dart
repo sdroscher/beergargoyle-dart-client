@@ -1282,6 +1282,7 @@ class CellarFilter extends $pb.GeneratedMessage {
     $3.Timestamp? addedBefore,
     $fixnum.Int64? styleFamilyId,
     $core.String? bjcpStyleId,
+    $core.String? packageType,
   }) {
     final $result = create();
     if (breweryId != null) {
@@ -1338,6 +1339,9 @@ class CellarFilter extends $pb.GeneratedMessage {
     if (bjcpStyleId != null) {
       $result.bjcpStyleId = bjcpStyleId;
     }
+    if (packageType != null) {
+      $result.packageType = packageType;
+    }
     return $result;
   }
   CellarFilter._() : super();
@@ -1363,6 +1367,7 @@ class CellarFilter extends $pb.GeneratedMessage {
     ..aOM<$3.Timestamp>(16, _omitFieldNames ? '' : 'addedBefore', subBuilder: $3.Timestamp.create)
     ..a<$fixnum.Int64>(17, _omitFieldNames ? '' : 'styleFamilyId', $pb.PbFieldType.OU6, defaultOrMaker: $fixnum.Int64.ZERO)
     ..aOS(18, _omitFieldNames ? '' : 'bjcpStyleId')
+    ..aOS(19, _omitFieldNames ? '' : 'packageType')
     ..hasRequiredFields = false
   ;
 
@@ -1544,6 +1549,15 @@ class CellarFilter extends $pb.GeneratedMessage {
   $core.bool hasBjcpStyleId() => $_has(17);
   @$pb.TagNumber(18)
   void clearBjcpStyleId() => clearField(18);
+
+  @$pb.TagNumber(19)
+  $core.String get packageType => $_getSZ(18);
+  @$pb.TagNumber(19)
+  set packageType($core.String v) { $_setString(18, v); }
+  @$pb.TagNumber(19)
+  $core.bool hasPackageType() => $_has(18);
+  @$pb.TagNumber(19)
+  void clearPackageType() => clearField(19);
 }
 
 class RecommendBeerRequest extends $pb.GeneratedMessage {

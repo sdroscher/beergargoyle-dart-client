@@ -293,6 +293,7 @@ const CellarFilter$json = {
     {'1': 'added_before', '3': 16, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '10': 'addedBefore'},
     {'1': 'style_family_id', '3': 17, '4': 1, '5': 4, '9': 14, '10': 'styleFamilyId', '17': true},
     {'1': 'bjcp_style_id', '3': 18, '4': 1, '5': 9, '9': 15, '10': 'bjcpStyleId', '17': true},
+    {'1': 'package_type', '3': 19, '4': 1, '5': 9, '9': 16, '10': 'packageType', '17': true},
   ],
   '8': [
     {'1': '_brewery_id'},
@@ -311,6 +312,7 @@ const CellarFilter$json = {
     {'1': '_maximum_rating'},
     {'1': '_style_family_id'},
     {'1': '_bjcp_style_id'},
+    {'1': '_package_type'},
   ],
 };
 
@@ -329,12 +331,13 @@ final $typed_data.Uint8List cellarFilterDescriptor = $convert.base64Decode(
     'DiABKAFIDVINbWF4aW11bVJhdGluZ4gBARISCgR0YWdzGA8gAygJUgR0YWdzEj0KDGFkZGVkX2'
     'JlZm9yZRgQIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXBSC2FkZGVkQmVmb3JlEisK'
     'D3N0eWxlX2ZhbWlseV9pZBgRIAEoBEgOUg1zdHlsZUZhbWlseUlkiAEBEicKDWJqY3Bfc3R5bG'
-    'VfaWQYEiABKAlID1ILYmpjcFN0eWxlSWSIAQFCDQoLX2JyZXdlcnlfaWRCDgoMX21pbmltdW1f'
-    'YWJ2Qg4KDF9tYXhpbXVtX2FidkILCglfc3R5bGVfaWRCEgoQX21pbmltdW1fdmludGFnZUISCh'
-    'BfbWF4aW11bV92aW50YWdlQhMKEV9vdmVyZHVlX3RvX2RyaW5rQg0KC19oYWRfYmVmb3JlQgoK'
-    'CF9zcGVjaWFsQhMKEV9taW5pbXVtX3F1YW50aXR5Qg8KDV9taW5pbXVtX3NpemVCDwoNX21heG'
-    'ltdW1fc2l6ZUIRCg9fbWluaW11bV9yYXRpbmdCEQoPX21heGltdW1fcmF0aW5nQhIKEF9zdHls'
-    'ZV9mYW1pbHlfaWRCEAoOX2JqY3Bfc3R5bGVfaWQ=');
+    'VfaWQYEiABKAlID1ILYmpjcFN0eWxlSWSIAQESJgoMcGFja2FnZV90eXBlGBMgASgJSBBSC3Bh'
+    'Y2thZ2VUeXBliAEBQg0KC19icmV3ZXJ5X2lkQg4KDF9taW5pbXVtX2FidkIOCgxfbWF4aW11bV'
+    '9hYnZCCwoJX3N0eWxlX2lkQhIKEF9taW5pbXVtX3ZpbnRhZ2VCEgoQX21heGltdW1fdmludGFn'
+    'ZUITChFfb3ZlcmR1ZV90b19kcmlua0INCgtfaGFkX2JlZm9yZUIKCghfc3BlY2lhbEITChFfbW'
+    'luaW11bV9xdWFudGl0eUIPCg1fbWluaW11bV9zaXplQg8KDV9tYXhpbXVtX3NpemVCEQoPX21p'
+    'bmltdW1fcmF0aW5nQhEKD19tYXhpbXVtX3JhdGluZ0ISChBfc3R5bGVfZmFtaWx5X2lkQhAKDl'
+    '9iamNwX3N0eWxlX2lkQg8KDV9wYWNrYWdlX3R5cGU=');
 
 @$core.Deprecated('Use recommendBeerRequestDescriptor instead')
 const RecommendBeerRequest$json = {
