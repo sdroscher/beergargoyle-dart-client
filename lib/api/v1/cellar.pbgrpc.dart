@@ -85,6 +85,22 @@ class CellarServiceClient extends $grpc.Client {
       '/api.v1.CellarService/RegenerateAdventCalendarDay',
       ($2.RegenerateAdventCalendarDayRequest value) => value.writeToBuffer(),
       ($core.List<$core.int> value) => $2.RegenerateAdventCalendarDayResponse.fromBuffer(value));
+  static final _$recordConsumption = $grpc.ClientMethod<$2.RecordConsumptionRequest, $2.RecordConsumptionResponse>(
+      '/api.v1.CellarService/RecordConsumption',
+      ($2.RecordConsumptionRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $2.RecordConsumptionResponse.fromBuffer(value));
+  static final _$getActivityFeed = $grpc.ClientMethod<$2.GetActivityFeedRequest, $2.GetActivityFeedResponse>(
+      '/api.v1.CellarService/GetActivityFeed',
+      ($2.GetActivityFeedRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $2.GetActivityFeedResponse.fromBuffer(value));
+  static final _$getYearInReview = $grpc.ClientMethod<$2.GetYearInReviewRequest, $2.GetYearInReviewResponse>(
+      '/api.v1.CellarService/GetYearInReview',
+      ($2.GetYearInReviewRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $2.GetYearInReviewResponse.fromBuffer(value));
+  static final _$importUntappdCheckins = $grpc.ClientMethod<$2.ImportUntappdCheckinsRequest, $2.ImportUntappdCheckinsResponse>(
+      '/api.v1.CellarService/ImportUntappdCheckins',
+      ($2.ImportUntappdCheckinsRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $2.ImportUntappdCheckinsResponse.fromBuffer(value));
 
   CellarServiceClient($grpc.ClientChannel channel,
       {$grpc.CallOptions? options,
@@ -154,6 +170,22 @@ class CellarServiceClient extends $grpc.Client {
 
   $grpc.ResponseFuture<$2.RegenerateAdventCalendarDayResponse> regenerateAdventCalendarDay($2.RegenerateAdventCalendarDayRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$regenerateAdventCalendarDay, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$2.RecordConsumptionResponse> recordConsumption($2.RecordConsumptionRequest request, {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$recordConsumption, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$2.GetActivityFeedResponse> getActivityFeed($2.GetActivityFeedRequest request, {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$getActivityFeed, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$2.GetYearInReviewResponse> getYearInReview($2.GetYearInReviewRequest request, {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$getYearInReview, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$2.ImportUntappdCheckinsResponse> importUntappdCheckins($2.ImportUntappdCheckinsRequest request, {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$importUntappdCheckins, request, options: options);
   }
 }
 
@@ -274,6 +306,34 @@ abstract class CellarServiceBase extends $grpc.Service {
         false,
         ($core.List<$core.int> value) => $2.RegenerateAdventCalendarDayRequest.fromBuffer(value),
         ($2.RegenerateAdventCalendarDayResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$2.RecordConsumptionRequest, $2.RecordConsumptionResponse>(
+        'RecordConsumption',
+        recordConsumption_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $2.RecordConsumptionRequest.fromBuffer(value),
+        ($2.RecordConsumptionResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$2.GetActivityFeedRequest, $2.GetActivityFeedResponse>(
+        'GetActivityFeed',
+        getActivityFeed_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $2.GetActivityFeedRequest.fromBuffer(value),
+        ($2.GetActivityFeedResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$2.GetYearInReviewRequest, $2.GetYearInReviewResponse>(
+        'GetYearInReview',
+        getYearInReview_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $2.GetYearInReviewRequest.fromBuffer(value),
+        ($2.GetYearInReviewResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$2.ImportUntappdCheckinsRequest, $2.ImportUntappdCheckinsResponse>(
+        'ImportUntappdCheckins',
+        importUntappdCheckins_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $2.ImportUntappdCheckinsRequest.fromBuffer(value),
+        ($2.ImportUntappdCheckinsResponse value) => value.writeToBuffer()));
   }
 
   $async.Future<$2.AddCellarResponse> addCellar_Pre($grpc.ServiceCall call, $async.Future<$2.AddCellarRequest> request) async {
@@ -340,6 +400,22 @@ abstract class CellarServiceBase extends $grpc.Service {
     return regenerateAdventCalendarDay(call, await request);
   }
 
+  $async.Future<$2.RecordConsumptionResponse> recordConsumption_Pre($grpc.ServiceCall call, $async.Future<$2.RecordConsumptionRequest> request) async {
+    return recordConsumption(call, await request);
+  }
+
+  $async.Future<$2.GetActivityFeedResponse> getActivityFeed_Pre($grpc.ServiceCall call, $async.Future<$2.GetActivityFeedRequest> request) async {
+    return getActivityFeed(call, await request);
+  }
+
+  $async.Future<$2.GetYearInReviewResponse> getYearInReview_Pre($grpc.ServiceCall call, $async.Future<$2.GetYearInReviewRequest> request) async {
+    return getYearInReview(call, await request);
+  }
+
+  $async.Future<$2.ImportUntappdCheckinsResponse> importUntappdCheckins_Pre($grpc.ServiceCall call, $async.Future<$2.ImportUntappdCheckinsRequest> request) async {
+    return importUntappdCheckins(call, await request);
+  }
+
   $async.Future<$2.AddCellarResponse> addCellar($grpc.ServiceCall call, $2.AddCellarRequest request);
   $async.Future<$2.UpdateCellarResponse> updateCellar($grpc.ServiceCall call, $2.UpdateCellarRequest request);
   $async.Future<$2.GetCellarResponse> getCellar($grpc.ServiceCall call, $2.GetCellarRequest request);
@@ -356,4 +432,8 @@ abstract class CellarServiceBase extends $grpc.Service {
   $async.Future<$2.GetAdventCalendarResponse> getAdventCalendar($grpc.ServiceCall call, $2.GetAdventCalendarRequest request);
   $async.Future<$2.DeleteAdventCalendarResponse> deleteAdventCalendar($grpc.ServiceCall call, $2.DeleteAdventCalendarRequest request);
   $async.Future<$2.RegenerateAdventCalendarDayResponse> regenerateAdventCalendarDay($grpc.ServiceCall call, $2.RegenerateAdventCalendarDayRequest request);
+  $async.Future<$2.RecordConsumptionResponse> recordConsumption($grpc.ServiceCall call, $2.RecordConsumptionRequest request);
+  $async.Future<$2.GetActivityFeedResponse> getActivityFeed($grpc.ServiceCall call, $2.GetActivityFeedRequest request);
+  $async.Future<$2.GetYearInReviewResponse> getYearInReview($grpc.ServiceCall call, $2.GetYearInReviewRequest request);
+  $async.Future<$2.ImportUntappdCheckinsResponse> importUntappdCheckins($grpc.ServiceCall call, $2.ImportUntappdCheckinsRequest request);
 }

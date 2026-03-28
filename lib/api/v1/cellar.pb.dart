@@ -16,7 +16,10 @@ import 'package:protobuf/protobuf.dart' as $pb;
 
 import '../../google/protobuf/timestamp.pb.dart' as $3;
 import 'beer.pb.dart' as $0;
+import 'cellar.pbenum.dart';
 import 'user.pb.dart' as $1;
+
+export 'cellar.pbenum.dart';
 
 class AddCellarRequest extends $pb.GeneratedMessage {
   factory AddCellarRequest({
@@ -3445,6 +3448,1042 @@ class RegenerateAdventCalendarDayResponse extends $pb.GeneratedMessage {
   void clearBeer() => clearField(1);
   @$pb.TagNumber(1)
   AdventCalendarBeer ensureBeer() => $_ensure(0);
+}
+
+/// One entry in the activity feed.
+/// Display examples:
+///   BEER_ADDED:    "Added 2 473ml cans of Boombox Juicy AF"
+///   BEER_CONSUMED: "Drank a 473ml can of Changing Colours Reclamation ★4.5 — 'Tropical and hazy'"
+class ActivityEvent extends $pb.GeneratedMessage {
+  factory ActivityEvent({
+    $fixnum.Int64? id,
+    ActivityEventType? type,
+    $3.Timestamp? occurredAt,
+    CellarBeer? cellarBeer,
+    $fixnum.Int64? quantity,
+    $core.String? note,
+    $core.double? rating,
+  }) {
+    final $result = create();
+    if (id != null) {
+      $result.id = id;
+    }
+    if (type != null) {
+      $result.type = type;
+    }
+    if (occurredAt != null) {
+      $result.occurredAt = occurredAt;
+    }
+    if (cellarBeer != null) {
+      $result.cellarBeer = cellarBeer;
+    }
+    if (quantity != null) {
+      $result.quantity = quantity;
+    }
+    if (note != null) {
+      $result.note = note;
+    }
+    if (rating != null) {
+      $result.rating = rating;
+    }
+    return $result;
+  }
+  ActivityEvent._() : super();
+  factory ActivityEvent.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory ActivityEvent.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ActivityEvent', package: const $pb.PackageName(_omitMessageNames ? '' : 'api.v1'), createEmptyInstance: create)
+    ..a<$fixnum.Int64>(1, _omitFieldNames ? '' : 'id', $pb.PbFieldType.OU6, defaultOrMaker: $fixnum.Int64.ZERO)
+    ..e<ActivityEventType>(2, _omitFieldNames ? '' : 'type', $pb.PbFieldType.OE, defaultOrMaker: ActivityEventType.ACTIVITY_EVENT_TYPE_UNSPECIFIED, valueOf: ActivityEventType.valueOf, enumValues: ActivityEventType.values)
+    ..aOM<$3.Timestamp>(3, _omitFieldNames ? '' : 'occurredAt', subBuilder: $3.Timestamp.create)
+    ..aOM<CellarBeer>(4, _omitFieldNames ? '' : 'cellarBeer', subBuilder: CellarBeer.create)
+    ..aInt64(5, _omitFieldNames ? '' : 'quantity')
+    ..aOS(6, _omitFieldNames ? '' : 'note')
+    ..a<$core.double>(7, _omitFieldNames ? '' : 'rating', $pb.PbFieldType.OD)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  ActivityEvent clone() => ActivityEvent()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  ActivityEvent copyWith(void Function(ActivityEvent) updates) => super.copyWith((message) => updates(message as ActivityEvent)) as ActivityEvent;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ActivityEvent create() => ActivityEvent._();
+  ActivityEvent createEmptyInstance() => create();
+  static $pb.PbList<ActivityEvent> createRepeated() => $pb.PbList<ActivityEvent>();
+  @$core.pragma('dart2js:noInline')
+  static ActivityEvent getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ActivityEvent>(create);
+  static ActivityEvent? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $fixnum.Int64 get id => $_getI64(0);
+  @$pb.TagNumber(1)
+  set id($fixnum.Int64 v) { $_setInt64(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => clearField(1);
+
+  @$pb.TagNumber(2)
+  ActivityEventType get type => $_getN(1);
+  @$pb.TagNumber(2)
+  set type(ActivityEventType v) { setField(2, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasType() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearType() => clearField(2);
+
+  @$pb.TagNumber(3)
+  $3.Timestamp get occurredAt => $_getN(2);
+  @$pb.TagNumber(3)
+  set occurredAt($3.Timestamp v) { setField(3, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasOccurredAt() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearOccurredAt() => clearField(3);
+  @$pb.TagNumber(3)
+  $3.Timestamp ensureOccurredAt() => $_ensure(2);
+
+  @$pb.TagNumber(4)
+  CellarBeer get cellarBeer => $_getN(3);
+  @$pb.TagNumber(4)
+  set cellarBeer(CellarBeer v) { setField(4, v); }
+  @$pb.TagNumber(4)
+  $core.bool hasCellarBeer() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearCellarBeer() => clearField(4);
+  @$pb.TagNumber(4)
+  CellarBeer ensureCellarBeer() => $_ensure(3);
+
+  @$pb.TagNumber(5)
+  $fixnum.Int64 get quantity => $_getI64(4);
+  @$pb.TagNumber(5)
+  set quantity($fixnum.Int64 v) { $_setInt64(4, v); }
+  @$pb.TagNumber(5)
+  $core.bool hasQuantity() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearQuantity() => clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get note => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set note($core.String v) { $_setString(5, v); }
+  @$pb.TagNumber(6)
+  $core.bool hasNote() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearNote() => clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.double get rating => $_getN(6);
+  @$pb.TagNumber(7)
+  set rating($core.double v) { $_setDouble(6, v); }
+  @$pb.TagNumber(7)
+  $core.bool hasRating() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearRating() => clearField(7);
+}
+
+class RecordConsumptionRequest extends $pb.GeneratedMessage {
+  factory RecordConsumptionRequest({
+    $fixnum.Int64? cellarEntryId,
+    $fixnum.Int64? quantity,
+    $3.Timestamp? consumedAt,
+    $core.String? note,
+    $core.double? rating,
+  }) {
+    final $result = create();
+    if (cellarEntryId != null) {
+      $result.cellarEntryId = cellarEntryId;
+    }
+    if (quantity != null) {
+      $result.quantity = quantity;
+    }
+    if (consumedAt != null) {
+      $result.consumedAt = consumedAt;
+    }
+    if (note != null) {
+      $result.note = note;
+    }
+    if (rating != null) {
+      $result.rating = rating;
+    }
+    return $result;
+  }
+  RecordConsumptionRequest._() : super();
+  factory RecordConsumptionRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory RecordConsumptionRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'RecordConsumptionRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'api.v1'), createEmptyInstance: create)
+    ..a<$fixnum.Int64>(1, _omitFieldNames ? '' : 'cellarEntryId', $pb.PbFieldType.OU6, defaultOrMaker: $fixnum.Int64.ZERO)
+    ..aInt64(2, _omitFieldNames ? '' : 'quantity')
+    ..aOM<$3.Timestamp>(3, _omitFieldNames ? '' : 'consumedAt', subBuilder: $3.Timestamp.create)
+    ..aOS(4, _omitFieldNames ? '' : 'note')
+    ..a<$core.double>(5, _omitFieldNames ? '' : 'rating', $pb.PbFieldType.OD)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  RecordConsumptionRequest clone() => RecordConsumptionRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  RecordConsumptionRequest copyWith(void Function(RecordConsumptionRequest) updates) => super.copyWith((message) => updates(message as RecordConsumptionRequest)) as RecordConsumptionRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static RecordConsumptionRequest create() => RecordConsumptionRequest._();
+  RecordConsumptionRequest createEmptyInstance() => create();
+  static $pb.PbList<RecordConsumptionRequest> createRepeated() => $pb.PbList<RecordConsumptionRequest>();
+  @$core.pragma('dart2js:noInline')
+  static RecordConsumptionRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<RecordConsumptionRequest>(create);
+  static RecordConsumptionRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $fixnum.Int64 get cellarEntryId => $_getI64(0);
+  @$pb.TagNumber(1)
+  set cellarEntryId($fixnum.Int64 v) { $_setInt64(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasCellarEntryId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearCellarEntryId() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $fixnum.Int64 get quantity => $_getI64(1);
+  @$pb.TagNumber(2)
+  set quantity($fixnum.Int64 v) { $_setInt64(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasQuantity() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearQuantity() => clearField(2);
+
+  @$pb.TagNumber(3)
+  $3.Timestamp get consumedAt => $_getN(2);
+  @$pb.TagNumber(3)
+  set consumedAt($3.Timestamp v) { setField(3, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasConsumedAt() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearConsumedAt() => clearField(3);
+  @$pb.TagNumber(3)
+  $3.Timestamp ensureConsumedAt() => $_ensure(2);
+
+  @$pb.TagNumber(4)
+  $core.String get note => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set note($core.String v) { $_setString(3, v); }
+  @$pb.TagNumber(4)
+  $core.bool hasNote() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearNote() => clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.double get rating => $_getN(4);
+  @$pb.TagNumber(5)
+  set rating($core.double v) { $_setDouble(4, v); }
+  @$pb.TagNumber(5)
+  $core.bool hasRating() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearRating() => clearField(5);
+}
+
+class RecordConsumptionResponse extends $pb.GeneratedMessage {
+  factory RecordConsumptionResponse({
+    ActivityEvent? consumption,
+  }) {
+    final $result = create();
+    if (consumption != null) {
+      $result.consumption = consumption;
+    }
+    return $result;
+  }
+  RecordConsumptionResponse._() : super();
+  factory RecordConsumptionResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory RecordConsumptionResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'RecordConsumptionResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'api.v1'), createEmptyInstance: create)
+    ..aOM<ActivityEvent>(1, _omitFieldNames ? '' : 'consumption', subBuilder: ActivityEvent.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  RecordConsumptionResponse clone() => RecordConsumptionResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  RecordConsumptionResponse copyWith(void Function(RecordConsumptionResponse) updates) => super.copyWith((message) => updates(message as RecordConsumptionResponse)) as RecordConsumptionResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static RecordConsumptionResponse create() => RecordConsumptionResponse._();
+  RecordConsumptionResponse createEmptyInstance() => create();
+  static $pb.PbList<RecordConsumptionResponse> createRepeated() => $pb.PbList<RecordConsumptionResponse>();
+  @$core.pragma('dart2js:noInline')
+  static RecordConsumptionResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<RecordConsumptionResponse>(create);
+  static RecordConsumptionResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  ActivityEvent get consumption => $_getN(0);
+  @$pb.TagNumber(1)
+  set consumption(ActivityEvent v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasConsumption() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearConsumption() => clearField(1);
+  @$pb.TagNumber(1)
+  ActivityEvent ensureConsumption() => $_ensure(0);
+}
+
+class GetActivityFeedRequest extends $pb.GeneratedMessage {
+  factory GetActivityFeedRequest({
+    $fixnum.Int64? cellarId,
+    $core.int? pageSize,
+    $core.int? page,
+    $3.Timestamp? from,
+    $3.Timestamp? to,
+  }) {
+    final $result = create();
+    if (cellarId != null) {
+      $result.cellarId = cellarId;
+    }
+    if (pageSize != null) {
+      $result.pageSize = pageSize;
+    }
+    if (page != null) {
+      $result.page = page;
+    }
+    if (from != null) {
+      $result.from = from;
+    }
+    if (to != null) {
+      $result.to = to;
+    }
+    return $result;
+  }
+  GetActivityFeedRequest._() : super();
+  factory GetActivityFeedRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory GetActivityFeedRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetActivityFeedRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'api.v1'), createEmptyInstance: create)
+    ..a<$fixnum.Int64>(1, _omitFieldNames ? '' : 'cellarId', $pb.PbFieldType.OU6, defaultOrMaker: $fixnum.Int64.ZERO)
+    ..a<$core.int>(2, _omitFieldNames ? '' : 'pageSize', $pb.PbFieldType.O3)
+    ..a<$core.int>(3, _omitFieldNames ? '' : 'page', $pb.PbFieldType.O3)
+    ..aOM<$3.Timestamp>(4, _omitFieldNames ? '' : 'from', subBuilder: $3.Timestamp.create)
+    ..aOM<$3.Timestamp>(5, _omitFieldNames ? '' : 'to', subBuilder: $3.Timestamp.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  GetActivityFeedRequest clone() => GetActivityFeedRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  GetActivityFeedRequest copyWith(void Function(GetActivityFeedRequest) updates) => super.copyWith((message) => updates(message as GetActivityFeedRequest)) as GetActivityFeedRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetActivityFeedRequest create() => GetActivityFeedRequest._();
+  GetActivityFeedRequest createEmptyInstance() => create();
+  static $pb.PbList<GetActivityFeedRequest> createRepeated() => $pb.PbList<GetActivityFeedRequest>();
+  @$core.pragma('dart2js:noInline')
+  static GetActivityFeedRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetActivityFeedRequest>(create);
+  static GetActivityFeedRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $fixnum.Int64 get cellarId => $_getI64(0);
+  @$pb.TagNumber(1)
+  set cellarId($fixnum.Int64 v) { $_setInt64(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasCellarId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearCellarId() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.int get pageSize => $_getIZ(1);
+  @$pb.TagNumber(2)
+  set pageSize($core.int v) { $_setSignedInt32(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasPageSize() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearPageSize() => clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.int get page => $_getIZ(2);
+  @$pb.TagNumber(3)
+  set page($core.int v) { $_setSignedInt32(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasPage() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearPage() => clearField(3);
+
+  @$pb.TagNumber(4)
+  $3.Timestamp get from => $_getN(3);
+  @$pb.TagNumber(4)
+  set from($3.Timestamp v) { setField(4, v); }
+  @$pb.TagNumber(4)
+  $core.bool hasFrom() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearFrom() => clearField(4);
+  @$pb.TagNumber(4)
+  $3.Timestamp ensureFrom() => $_ensure(3);
+
+  @$pb.TagNumber(5)
+  $3.Timestamp get to => $_getN(4);
+  @$pb.TagNumber(5)
+  set to($3.Timestamp v) { setField(5, v); }
+  @$pb.TagNumber(5)
+  $core.bool hasTo() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearTo() => clearField(5);
+  @$pb.TagNumber(5)
+  $3.Timestamp ensureTo() => $_ensure(4);
+}
+
+class GetActivityFeedResponse extends $pb.GeneratedMessage {
+  factory GetActivityFeedResponse({
+    $core.Iterable<ActivityEvent>? events,
+    $core.int? total,
+    $core.bool? hasMore,
+  }) {
+    final $result = create();
+    if (events != null) {
+      $result.events.addAll(events);
+    }
+    if (total != null) {
+      $result.total = total;
+    }
+    if (hasMore != null) {
+      $result.hasMore = hasMore;
+    }
+    return $result;
+  }
+  GetActivityFeedResponse._() : super();
+  factory GetActivityFeedResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory GetActivityFeedResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetActivityFeedResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'api.v1'), createEmptyInstance: create)
+    ..pc<ActivityEvent>(1, _omitFieldNames ? '' : 'events', $pb.PbFieldType.PM, subBuilder: ActivityEvent.create)
+    ..a<$core.int>(2, _omitFieldNames ? '' : 'total', $pb.PbFieldType.O3)
+    ..aOB(3, _omitFieldNames ? '' : 'hasMore')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  GetActivityFeedResponse clone() => GetActivityFeedResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  GetActivityFeedResponse copyWith(void Function(GetActivityFeedResponse) updates) => super.copyWith((message) => updates(message as GetActivityFeedResponse)) as GetActivityFeedResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetActivityFeedResponse create() => GetActivityFeedResponse._();
+  GetActivityFeedResponse createEmptyInstance() => create();
+  static $pb.PbList<GetActivityFeedResponse> createRepeated() => $pb.PbList<GetActivityFeedResponse>();
+  @$core.pragma('dart2js:noInline')
+  static GetActivityFeedResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetActivityFeedResponse>(create);
+  static GetActivityFeedResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.List<ActivityEvent> get events => $_getList(0);
+
+  @$pb.TagNumber(2)
+  $core.int get total => $_getIZ(1);
+  @$pb.TagNumber(2)
+  set total($core.int v) { $_setSignedInt32(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasTotal() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearTotal() => clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.bool get hasMore => $_getBF(2);
+  @$pb.TagNumber(3)
+  set hasMore($core.bool v) { $_setBool(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasHasMore() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearHasMore() => clearField(3);
+}
+
+class NameCount extends $pb.GeneratedMessage {
+  factory NameCount({
+    $core.String? name,
+    $fixnum.Int64? count,
+  }) {
+    final $result = create();
+    if (name != null) {
+      $result.name = name;
+    }
+    if (count != null) {
+      $result.count = count;
+    }
+    return $result;
+  }
+  NameCount._() : super();
+  factory NameCount.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory NameCount.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'NameCount', package: const $pb.PackageName(_omitMessageNames ? '' : 'api.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'name')
+    ..aInt64(2, _omitFieldNames ? '' : 'count')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  NameCount clone() => NameCount()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  NameCount copyWith(void Function(NameCount) updates) => super.copyWith((message) => updates(message as NameCount)) as NameCount;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static NameCount create() => NameCount._();
+  NameCount createEmptyInstance() => create();
+  static $pb.PbList<NameCount> createRepeated() => $pb.PbList<NameCount>();
+  @$core.pragma('dart2js:noInline')
+  static NameCount getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<NameCount>(create);
+  static NameCount? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get name => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set name($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasName() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearName() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $fixnum.Int64 get count => $_getI64(1);
+  @$pb.TagNumber(2)
+  set count($fixnum.Int64 v) { $_setInt64(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasCount() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearCount() => clearField(2);
+}
+
+class MonthlyCount extends $pb.GeneratedMessage {
+  factory MonthlyCount({
+    $core.int? month,
+    $fixnum.Int64? count,
+  }) {
+    final $result = create();
+    if (month != null) {
+      $result.month = month;
+    }
+    if (count != null) {
+      $result.count = count;
+    }
+    return $result;
+  }
+  MonthlyCount._() : super();
+  factory MonthlyCount.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory MonthlyCount.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'MonthlyCount', package: const $pb.PackageName(_omitMessageNames ? '' : 'api.v1'), createEmptyInstance: create)
+    ..a<$core.int>(1, _omitFieldNames ? '' : 'month', $pb.PbFieldType.O3)
+    ..aInt64(2, _omitFieldNames ? '' : 'count')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  MonthlyCount clone() => MonthlyCount()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  MonthlyCount copyWith(void Function(MonthlyCount) updates) => super.copyWith((message) => updates(message as MonthlyCount)) as MonthlyCount;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static MonthlyCount create() => MonthlyCount._();
+  MonthlyCount createEmptyInstance() => create();
+  static $pb.PbList<MonthlyCount> createRepeated() => $pb.PbList<MonthlyCount>();
+  @$core.pragma('dart2js:noInline')
+  static MonthlyCount getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<MonthlyCount>(create);
+  static MonthlyCount? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.int get month => $_getIZ(0);
+  @$pb.TagNumber(1)
+  set month($core.int v) { $_setSignedInt32(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasMonth() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearMonth() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $fixnum.Int64 get count => $_getI64(1);
+  @$pb.TagNumber(2)
+  set count($fixnum.Int64 v) { $_setInt64(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasCount() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearCount() => clearField(2);
+}
+
+class YearInReview extends $pb.GeneratedMessage {
+  factory YearInReview({
+    $core.int? year,
+    $fixnum.Int64? cellarId,
+    $fixnum.Int64? beersConsumed,
+    $fixnum.Int64? uniqueBeers,
+    $core.double? totalVolumeMl,
+    $core.double? averageRating,
+    $fixnum.Int64? beersAdded,
+    $core.Iterable<NameCount>? topStyles,
+    $core.Iterable<NameCount>? topBreweries,
+    $core.Iterable<MonthlyCount>? byMonth,
+    $core.Iterable<NameCount>? topCategories,
+  }) {
+    final $result = create();
+    if (year != null) {
+      $result.year = year;
+    }
+    if (cellarId != null) {
+      $result.cellarId = cellarId;
+    }
+    if (beersConsumed != null) {
+      $result.beersConsumed = beersConsumed;
+    }
+    if (uniqueBeers != null) {
+      $result.uniqueBeers = uniqueBeers;
+    }
+    if (totalVolumeMl != null) {
+      $result.totalVolumeMl = totalVolumeMl;
+    }
+    if (averageRating != null) {
+      $result.averageRating = averageRating;
+    }
+    if (beersAdded != null) {
+      $result.beersAdded = beersAdded;
+    }
+    if (topStyles != null) {
+      $result.topStyles.addAll(topStyles);
+    }
+    if (topBreweries != null) {
+      $result.topBreweries.addAll(topBreweries);
+    }
+    if (byMonth != null) {
+      $result.byMonth.addAll(byMonth);
+    }
+    if (topCategories != null) {
+      $result.topCategories.addAll(topCategories);
+    }
+    return $result;
+  }
+  YearInReview._() : super();
+  factory YearInReview.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory YearInReview.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'YearInReview', package: const $pb.PackageName(_omitMessageNames ? '' : 'api.v1'), createEmptyInstance: create)
+    ..a<$core.int>(1, _omitFieldNames ? '' : 'year', $pb.PbFieldType.O3)
+    ..a<$fixnum.Int64>(2, _omitFieldNames ? '' : 'cellarId', $pb.PbFieldType.OU6, defaultOrMaker: $fixnum.Int64.ZERO)
+    ..aInt64(3, _omitFieldNames ? '' : 'beersConsumed')
+    ..aInt64(4, _omitFieldNames ? '' : 'uniqueBeers')
+    ..a<$core.double>(5, _omitFieldNames ? '' : 'totalVolumeMl', $pb.PbFieldType.OD)
+    ..a<$core.double>(6, _omitFieldNames ? '' : 'averageRating', $pb.PbFieldType.OD)
+    ..aInt64(7, _omitFieldNames ? '' : 'beersAdded')
+    ..pc<NameCount>(8, _omitFieldNames ? '' : 'topStyles', $pb.PbFieldType.PM, subBuilder: NameCount.create)
+    ..pc<NameCount>(9, _omitFieldNames ? '' : 'topBreweries', $pb.PbFieldType.PM, subBuilder: NameCount.create)
+    ..pc<MonthlyCount>(10, _omitFieldNames ? '' : 'byMonth', $pb.PbFieldType.PM, subBuilder: MonthlyCount.create)
+    ..pc<NameCount>(11, _omitFieldNames ? '' : 'topCategories', $pb.PbFieldType.PM, subBuilder: NameCount.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  YearInReview clone() => YearInReview()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  YearInReview copyWith(void Function(YearInReview) updates) => super.copyWith((message) => updates(message as YearInReview)) as YearInReview;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static YearInReview create() => YearInReview._();
+  YearInReview createEmptyInstance() => create();
+  static $pb.PbList<YearInReview> createRepeated() => $pb.PbList<YearInReview>();
+  @$core.pragma('dart2js:noInline')
+  static YearInReview getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<YearInReview>(create);
+  static YearInReview? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.int get year => $_getIZ(0);
+  @$pb.TagNumber(1)
+  set year($core.int v) { $_setSignedInt32(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasYear() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearYear() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $fixnum.Int64 get cellarId => $_getI64(1);
+  @$pb.TagNumber(2)
+  set cellarId($fixnum.Int64 v) { $_setInt64(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasCellarId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearCellarId() => clearField(2);
+
+  @$pb.TagNumber(3)
+  $fixnum.Int64 get beersConsumed => $_getI64(2);
+  @$pb.TagNumber(3)
+  set beersConsumed($fixnum.Int64 v) { $_setInt64(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasBeersConsumed() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearBeersConsumed() => clearField(3);
+
+  @$pb.TagNumber(4)
+  $fixnum.Int64 get uniqueBeers => $_getI64(3);
+  @$pb.TagNumber(4)
+  set uniqueBeers($fixnum.Int64 v) { $_setInt64(3, v); }
+  @$pb.TagNumber(4)
+  $core.bool hasUniqueBeers() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearUniqueBeers() => clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.double get totalVolumeMl => $_getN(4);
+  @$pb.TagNumber(5)
+  set totalVolumeMl($core.double v) { $_setDouble(4, v); }
+  @$pb.TagNumber(5)
+  $core.bool hasTotalVolumeMl() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearTotalVolumeMl() => clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.double get averageRating => $_getN(5);
+  @$pb.TagNumber(6)
+  set averageRating($core.double v) { $_setDouble(5, v); }
+  @$pb.TagNumber(6)
+  $core.bool hasAverageRating() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearAverageRating() => clearField(6);
+
+  @$pb.TagNumber(7)
+  $fixnum.Int64 get beersAdded => $_getI64(6);
+  @$pb.TagNumber(7)
+  set beersAdded($fixnum.Int64 v) { $_setInt64(6, v); }
+  @$pb.TagNumber(7)
+  $core.bool hasBeersAdded() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearBeersAdded() => clearField(7);
+
+  @$pb.TagNumber(8)
+  $core.List<NameCount> get topStyles => $_getList(7);
+
+  @$pb.TagNumber(9)
+  $core.List<NameCount> get topBreweries => $_getList(8);
+
+  @$pb.TagNumber(10)
+  $core.List<MonthlyCount> get byMonth => $_getList(9);
+
+  @$pb.TagNumber(11)
+  $core.List<NameCount> get topCategories => $_getList(10);
+}
+
+class GetYearInReviewRequest extends $pb.GeneratedMessage {
+  factory GetYearInReviewRequest({
+    $fixnum.Int64? cellarId,
+    $core.int? year,
+  }) {
+    final $result = create();
+    if (cellarId != null) {
+      $result.cellarId = cellarId;
+    }
+    if (year != null) {
+      $result.year = year;
+    }
+    return $result;
+  }
+  GetYearInReviewRequest._() : super();
+  factory GetYearInReviewRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory GetYearInReviewRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetYearInReviewRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'api.v1'), createEmptyInstance: create)
+    ..a<$fixnum.Int64>(1, _omitFieldNames ? '' : 'cellarId', $pb.PbFieldType.OU6, defaultOrMaker: $fixnum.Int64.ZERO)
+    ..a<$core.int>(2, _omitFieldNames ? '' : 'year', $pb.PbFieldType.O3)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  GetYearInReviewRequest clone() => GetYearInReviewRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  GetYearInReviewRequest copyWith(void Function(GetYearInReviewRequest) updates) => super.copyWith((message) => updates(message as GetYearInReviewRequest)) as GetYearInReviewRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetYearInReviewRequest create() => GetYearInReviewRequest._();
+  GetYearInReviewRequest createEmptyInstance() => create();
+  static $pb.PbList<GetYearInReviewRequest> createRepeated() => $pb.PbList<GetYearInReviewRequest>();
+  @$core.pragma('dart2js:noInline')
+  static GetYearInReviewRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetYearInReviewRequest>(create);
+  static GetYearInReviewRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $fixnum.Int64 get cellarId => $_getI64(0);
+  @$pb.TagNumber(1)
+  set cellarId($fixnum.Int64 v) { $_setInt64(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasCellarId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearCellarId() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.int get year => $_getIZ(1);
+  @$pb.TagNumber(2)
+  set year($core.int v) { $_setSignedInt32(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasYear() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearYear() => clearField(2);
+}
+
+class GetYearInReviewResponse extends $pb.GeneratedMessage {
+  factory GetYearInReviewResponse({
+    YearInReview? yearInReview,
+  }) {
+    final $result = create();
+    if (yearInReview != null) {
+      $result.yearInReview = yearInReview;
+    }
+    return $result;
+  }
+  GetYearInReviewResponse._() : super();
+  factory GetYearInReviewResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory GetYearInReviewResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetYearInReviewResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'api.v1'), createEmptyInstance: create)
+    ..aOM<YearInReview>(1, _omitFieldNames ? '' : 'yearInReview', subBuilder: YearInReview.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  GetYearInReviewResponse clone() => GetYearInReviewResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  GetYearInReviewResponse copyWith(void Function(GetYearInReviewResponse) updates) => super.copyWith((message) => updates(message as GetYearInReviewResponse)) as GetYearInReviewResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetYearInReviewResponse create() => GetYearInReviewResponse._();
+  GetYearInReviewResponse createEmptyInstance() => create();
+  static $pb.PbList<GetYearInReviewResponse> createRepeated() => $pb.PbList<GetYearInReviewResponse>();
+  @$core.pragma('dart2js:noInline')
+  static GetYearInReviewResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetYearInReviewResponse>(create);
+  static GetYearInReviewResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  YearInReview get yearInReview => $_getN(0);
+  @$pb.TagNumber(1)
+  set yearInReview(YearInReview v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasYearInReview() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearYearInReview() => clearField(1);
+  @$pb.TagNumber(1)
+  YearInReview ensureYearInReview() => $_ensure(0);
+}
+
+class ImportUntappdCheckinsRequest extends $pb.GeneratedMessage {
+  factory ImportUntappdCheckinsRequest({
+    $fixnum.Int64? cellarId,
+    $core.List<$core.int>? csvData,
+  }) {
+    final $result = create();
+    if (cellarId != null) {
+      $result.cellarId = cellarId;
+    }
+    if (csvData != null) {
+      $result.csvData = csvData;
+    }
+    return $result;
+  }
+  ImportUntappdCheckinsRequest._() : super();
+  factory ImportUntappdCheckinsRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory ImportUntappdCheckinsRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ImportUntappdCheckinsRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'api.v1'), createEmptyInstance: create)
+    ..a<$fixnum.Int64>(1, _omitFieldNames ? '' : 'cellarId', $pb.PbFieldType.OU6, defaultOrMaker: $fixnum.Int64.ZERO)
+    ..a<$core.List<$core.int>>(2, _omitFieldNames ? '' : 'csvData', $pb.PbFieldType.OY)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  ImportUntappdCheckinsRequest clone() => ImportUntappdCheckinsRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  ImportUntappdCheckinsRequest copyWith(void Function(ImportUntappdCheckinsRequest) updates) => super.copyWith((message) => updates(message as ImportUntappdCheckinsRequest)) as ImportUntappdCheckinsRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ImportUntappdCheckinsRequest create() => ImportUntappdCheckinsRequest._();
+  ImportUntappdCheckinsRequest createEmptyInstance() => create();
+  static $pb.PbList<ImportUntappdCheckinsRequest> createRepeated() => $pb.PbList<ImportUntappdCheckinsRequest>();
+  @$core.pragma('dart2js:noInline')
+  static ImportUntappdCheckinsRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ImportUntappdCheckinsRequest>(create);
+  static ImportUntappdCheckinsRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $fixnum.Int64 get cellarId => $_getI64(0);
+  @$pb.TagNumber(1)
+  set cellarId($fixnum.Int64 v) { $_setInt64(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasCellarId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearCellarId() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.List<$core.int> get csvData => $_getN(1);
+  @$pb.TagNumber(2)
+  set csvData($core.List<$core.int> v) { $_setBytes(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasCsvData() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearCsvData() => clearField(2);
+}
+
+class ImportUntappdCheckinsResponse extends $pb.GeneratedMessage {
+  factory ImportUntappdCheckinsResponse({
+    $core.int? imported,
+    $core.int? skipped,
+    $core.int? updated,
+  }) {
+    final $result = create();
+    if (imported != null) {
+      $result.imported = imported;
+    }
+    if (skipped != null) {
+      $result.skipped = skipped;
+    }
+    if (updated != null) {
+      $result.updated = updated;
+    }
+    return $result;
+  }
+  ImportUntappdCheckinsResponse._() : super();
+  factory ImportUntappdCheckinsResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory ImportUntappdCheckinsResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ImportUntappdCheckinsResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'api.v1'), createEmptyInstance: create)
+    ..a<$core.int>(1, _omitFieldNames ? '' : 'imported', $pb.PbFieldType.O3)
+    ..a<$core.int>(2, _omitFieldNames ? '' : 'skipped', $pb.PbFieldType.O3)
+    ..a<$core.int>(3, _omitFieldNames ? '' : 'updated', $pb.PbFieldType.O3)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  ImportUntappdCheckinsResponse clone() => ImportUntappdCheckinsResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  ImportUntappdCheckinsResponse copyWith(void Function(ImportUntappdCheckinsResponse) updates) => super.copyWith((message) => updates(message as ImportUntappdCheckinsResponse)) as ImportUntappdCheckinsResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ImportUntappdCheckinsResponse create() => ImportUntappdCheckinsResponse._();
+  ImportUntappdCheckinsResponse createEmptyInstance() => create();
+  static $pb.PbList<ImportUntappdCheckinsResponse> createRepeated() => $pb.PbList<ImportUntappdCheckinsResponse>();
+  @$core.pragma('dart2js:noInline')
+  static ImportUntappdCheckinsResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ImportUntappdCheckinsResponse>(create);
+  static ImportUntappdCheckinsResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.int get imported => $_getIZ(0);
+  @$pb.TagNumber(1)
+  set imported($core.int v) { $_setSignedInt32(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasImported() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearImported() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.int get skipped => $_getIZ(1);
+  @$pb.TagNumber(2)
+  set skipped($core.int v) { $_setSignedInt32(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasSkipped() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearSkipped() => clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.int get updated => $_getIZ(2);
+  @$pb.TagNumber(3)
+  set updated($core.int v) { $_setSignedInt32(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasUpdated() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearUpdated() => clearField(3);
 }
 
 

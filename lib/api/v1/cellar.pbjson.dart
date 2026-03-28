@@ -13,6 +13,22 @@ import 'dart:convert' as $convert;
 import 'dart:core' as $core;
 import 'dart:typed_data' as $typed_data;
 
+@$core.Deprecated('Use activityEventTypeDescriptor instead')
+const ActivityEventType$json = {
+  '1': 'ActivityEventType',
+  '2': [
+    {'1': 'ACTIVITY_EVENT_TYPE_UNSPECIFIED', '2': 0},
+    {'1': 'ACTIVITY_EVENT_TYPE_BEER_ADDED', '2': 1},
+    {'1': 'ACTIVITY_EVENT_TYPE_BEER_CONSUMED', '2': 2},
+  ],
+};
+
+/// Descriptor for `ActivityEventType`. Decode as a `google.protobuf.EnumDescriptorProto`.
+final $typed_data.Uint8List activityEventTypeDescriptor = $convert.base64Decode(
+    'ChFBY3Rpdml0eUV2ZW50VHlwZRIjCh9BQ1RJVklUWV9FVkVOVF9UWVBFX1VOU1BFQ0lGSUVEEA'
+    'ASIgoeQUNUSVZJVFlfRVZFTlRfVFlQRV9CRUVSX0FEREVEEAESJQohQUNUSVZJVFlfRVZFTlRf'
+    'VFlQRV9CRUVSX0NPTlNVTUVEEAI=');
+
 @$core.Deprecated('Use addCellarRequestDescriptor instead')
 const AddCellarRequest$json = {
   '1': 'AddCellarRequest',
@@ -739,4 +755,216 @@ const RegenerateAdventCalendarDayResponse$json = {
 final $typed_data.Uint8List regenerateAdventCalendarDayResponseDescriptor = $convert.base64Decode(
     'CiNSZWdlbmVyYXRlQWR2ZW50Q2FsZW5kYXJEYXlSZXNwb25zZRIuCgRiZWVyGAEgASgLMhouYX'
     'BpLnYxLkFkdmVudENhbGVuZGFyQmVlclIEYmVlcg==');
+
+@$core.Deprecated('Use activityEventDescriptor instead')
+const ActivityEvent$json = {
+  '1': 'ActivityEvent',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 4, '10': 'id'},
+    {'1': 'type', '3': 2, '4': 1, '5': 14, '6': '.api.v1.ActivityEventType', '10': 'type'},
+    {'1': 'occurred_at', '3': 3, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '10': 'occurredAt'},
+    {'1': 'cellar_beer', '3': 4, '4': 1, '5': 11, '6': '.api.v1.CellarBeer', '10': 'cellarBeer'},
+    {'1': 'quantity', '3': 5, '4': 1, '5': 3, '10': 'quantity'},
+    {'1': 'note', '3': 6, '4': 1, '5': 9, '9': 0, '10': 'note', '17': true},
+    {'1': 'rating', '3': 7, '4': 1, '5': 1, '9': 1, '10': 'rating', '17': true},
+  ],
+  '8': [
+    {'1': '_note'},
+    {'1': '_rating'},
+  ],
+};
+
+/// Descriptor for `ActivityEvent`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List activityEventDescriptor = $convert.base64Decode(
+    'Cg1BY3Rpdml0eUV2ZW50Eg4KAmlkGAEgASgEUgJpZBItCgR0eXBlGAIgASgOMhkuYXBpLnYxLk'
+    'FjdGl2aXR5RXZlbnRUeXBlUgR0eXBlEjsKC29jY3VycmVkX2F0GAMgASgLMhouZ29vZ2xlLnBy'
+    'b3RvYnVmLlRpbWVzdGFtcFIKb2NjdXJyZWRBdBIzCgtjZWxsYXJfYmVlchgEIAEoCzISLmFwaS'
+    '52MS5DZWxsYXJCZWVyUgpjZWxsYXJCZWVyEhoKCHF1YW50aXR5GAUgASgDUghxdWFudGl0eRIX'
+    'CgRub3RlGAYgASgJSABSBG5vdGWIAQESGwoGcmF0aW5nGAcgASgBSAFSBnJhdGluZ4gBAUIHCg'
+    'Vfbm90ZUIJCgdfcmF0aW5n');
+
+@$core.Deprecated('Use recordConsumptionRequestDescriptor instead')
+const RecordConsumptionRequest$json = {
+  '1': 'RecordConsumptionRequest',
+  '2': [
+    {'1': 'cellar_entry_id', '3': 1, '4': 1, '5': 4, '10': 'cellarEntryId'},
+    {'1': 'quantity', '3': 2, '4': 1, '5': 3, '10': 'quantity'},
+    {'1': 'consumed_at', '3': 3, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '10': 'consumedAt'},
+    {'1': 'note', '3': 4, '4': 1, '5': 9, '9': 0, '10': 'note', '17': true},
+    {'1': 'rating', '3': 5, '4': 1, '5': 1, '9': 1, '10': 'rating', '17': true},
+  ],
+  '8': [
+    {'1': '_note'},
+    {'1': '_rating'},
+  ],
+};
+
+/// Descriptor for `RecordConsumptionRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List recordConsumptionRequestDescriptor = $convert.base64Decode(
+    'ChhSZWNvcmRDb25zdW1wdGlvblJlcXVlc3QSJgoPY2VsbGFyX2VudHJ5X2lkGAEgASgEUg1jZW'
+    'xsYXJFbnRyeUlkEhoKCHF1YW50aXR5GAIgASgDUghxdWFudGl0eRI7Cgtjb25zdW1lZF9hdBgD'
+    'IAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXBSCmNvbnN1bWVkQXQSFwoEbm90ZRgEIA'
+    'EoCUgAUgRub3RliAEBEhsKBnJhdGluZxgFIAEoAUgBUgZyYXRpbmeIAQFCBwoFX25vdGVCCQoH'
+    'X3JhdGluZw==');
+
+@$core.Deprecated('Use recordConsumptionResponseDescriptor instead')
+const RecordConsumptionResponse$json = {
+  '1': 'RecordConsumptionResponse',
+  '2': [
+    {'1': 'consumption', '3': 1, '4': 1, '5': 11, '6': '.api.v1.ActivityEvent', '10': 'consumption'},
+  ],
+};
+
+/// Descriptor for `RecordConsumptionResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List recordConsumptionResponseDescriptor = $convert.base64Decode(
+    'ChlSZWNvcmRDb25zdW1wdGlvblJlc3BvbnNlEjcKC2NvbnN1bXB0aW9uGAEgASgLMhUuYXBpLn'
+    'YxLkFjdGl2aXR5RXZlbnRSC2NvbnN1bXB0aW9u');
+
+@$core.Deprecated('Use getActivityFeedRequestDescriptor instead')
+const GetActivityFeedRequest$json = {
+  '1': 'GetActivityFeedRequest',
+  '2': [
+    {'1': 'cellar_id', '3': 1, '4': 1, '5': 4, '10': 'cellarId'},
+    {'1': 'page_size', '3': 2, '4': 1, '5': 5, '10': 'pageSize'},
+    {'1': 'page', '3': 3, '4': 1, '5': 5, '10': 'page'},
+    {'1': 'from', '3': 4, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '10': 'from'},
+    {'1': 'to', '3': 5, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '10': 'to'},
+  ],
+};
+
+/// Descriptor for `GetActivityFeedRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getActivityFeedRequestDescriptor = $convert.base64Decode(
+    'ChZHZXRBY3Rpdml0eUZlZWRSZXF1ZXN0EhsKCWNlbGxhcl9pZBgBIAEoBFIIY2VsbGFySWQSGw'
+    'oJcGFnZV9zaXplGAIgASgFUghwYWdlU2l6ZRISCgRwYWdlGAMgASgFUgRwYWdlEi4KBGZyb20Y'
+    'BCABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wUgRmcm9tEioKAnRvGAUgASgLMhouZ2'
+    '9vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcFICdG8=');
+
+@$core.Deprecated('Use getActivityFeedResponseDescriptor instead')
+const GetActivityFeedResponse$json = {
+  '1': 'GetActivityFeedResponse',
+  '2': [
+    {'1': 'events', '3': 1, '4': 3, '5': 11, '6': '.api.v1.ActivityEvent', '10': 'events'},
+    {'1': 'total', '3': 2, '4': 1, '5': 5, '10': 'total'},
+    {'1': 'has_more', '3': 3, '4': 1, '5': 8, '10': 'hasMore'},
+  ],
+};
+
+/// Descriptor for `GetActivityFeedResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getActivityFeedResponseDescriptor = $convert.base64Decode(
+    'ChdHZXRBY3Rpdml0eUZlZWRSZXNwb25zZRItCgZldmVudHMYASADKAsyFS5hcGkudjEuQWN0aX'
+    'ZpdHlFdmVudFIGZXZlbnRzEhQKBXRvdGFsGAIgASgFUgV0b3RhbBIZCghoYXNfbW9yZRgDIAEo'
+    'CFIHaGFzTW9yZQ==');
+
+@$core.Deprecated('Use nameCountDescriptor instead')
+const NameCount$json = {
+  '1': 'NameCount',
+  '2': [
+    {'1': 'name', '3': 1, '4': 1, '5': 9, '10': 'name'},
+    {'1': 'count', '3': 2, '4': 1, '5': 3, '10': 'count'},
+  ],
+};
+
+/// Descriptor for `NameCount`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List nameCountDescriptor = $convert.base64Decode(
+    'CglOYW1lQ291bnQSEgoEbmFtZRgBIAEoCVIEbmFtZRIUCgVjb3VudBgCIAEoA1IFY291bnQ=');
+
+@$core.Deprecated('Use monthlyCountDescriptor instead')
+const MonthlyCount$json = {
+  '1': 'MonthlyCount',
+  '2': [
+    {'1': 'month', '3': 1, '4': 1, '5': 5, '10': 'month'},
+    {'1': 'count', '3': 2, '4': 1, '5': 3, '10': 'count'},
+  ],
+};
+
+/// Descriptor for `MonthlyCount`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List monthlyCountDescriptor = $convert.base64Decode(
+    'CgxNb250aGx5Q291bnQSFAoFbW9udGgYASABKAVSBW1vbnRoEhQKBWNvdW50GAIgASgDUgVjb3'
+    'VudA==');
+
+@$core.Deprecated('Use yearInReviewDescriptor instead')
+const YearInReview$json = {
+  '1': 'YearInReview',
+  '2': [
+    {'1': 'year', '3': 1, '4': 1, '5': 5, '10': 'year'},
+    {'1': 'cellar_id', '3': 2, '4': 1, '5': 4, '10': 'cellarId'},
+    {'1': 'beers_consumed', '3': 3, '4': 1, '5': 3, '10': 'beersConsumed'},
+    {'1': 'unique_beers', '3': 4, '4': 1, '5': 3, '10': 'uniqueBeers'},
+    {'1': 'total_volume_ml', '3': 5, '4': 1, '5': 1, '10': 'totalVolumeMl'},
+    {'1': 'average_rating', '3': 6, '4': 1, '5': 1, '10': 'averageRating'},
+    {'1': 'beers_added', '3': 7, '4': 1, '5': 3, '10': 'beersAdded'},
+    {'1': 'top_styles', '3': 8, '4': 3, '5': 11, '6': '.api.v1.NameCount', '10': 'topStyles'},
+    {'1': 'top_breweries', '3': 9, '4': 3, '5': 11, '6': '.api.v1.NameCount', '10': 'topBreweries'},
+    {'1': 'by_month', '3': 10, '4': 3, '5': 11, '6': '.api.v1.MonthlyCount', '10': 'byMonth'},
+    {'1': 'top_categories', '3': 11, '4': 3, '5': 11, '6': '.api.v1.NameCount', '10': 'topCategories'},
+  ],
+};
+
+/// Descriptor for `YearInReview`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List yearInReviewDescriptor = $convert.base64Decode(
+    'CgxZZWFySW5SZXZpZXcSEgoEeWVhchgBIAEoBVIEeWVhchIbCgljZWxsYXJfaWQYAiABKARSCG'
+    'NlbGxhcklkEiUKDmJlZXJzX2NvbnN1bWVkGAMgASgDUg1iZWVyc0NvbnN1bWVkEiEKDHVuaXF1'
+    'ZV9iZWVycxgEIAEoA1ILdW5pcXVlQmVlcnMSJgoPdG90YWxfdm9sdW1lX21sGAUgASgBUg10b3'
+    'RhbFZvbHVtZU1sEiUKDmF2ZXJhZ2VfcmF0aW5nGAYgASgBUg1hdmVyYWdlUmF0aW5nEh8KC2Jl'
+    'ZXJzX2FkZGVkGAcgASgDUgpiZWVyc0FkZGVkEjAKCnRvcF9zdHlsZXMYCCADKAsyES5hcGkudj'
+    'EuTmFtZUNvdW50Ugl0b3BTdHlsZXMSNgoNdG9wX2JyZXdlcmllcxgJIAMoCzIRLmFwaS52MS5O'
+    'YW1lQ291bnRSDHRvcEJyZXdlcmllcxIvCghieV9tb250aBgKIAMoCzIULmFwaS52MS5Nb250aG'
+    'x5Q291bnRSB2J5TW9udGgSOAoOdG9wX2NhdGVnb3JpZXMYCyADKAsyES5hcGkudjEuTmFtZUNv'
+    'dW50Ug10b3BDYXRlZ29yaWVz');
+
+@$core.Deprecated('Use getYearInReviewRequestDescriptor instead')
+const GetYearInReviewRequest$json = {
+  '1': 'GetYearInReviewRequest',
+  '2': [
+    {'1': 'cellar_id', '3': 1, '4': 1, '5': 4, '10': 'cellarId'},
+    {'1': 'year', '3': 2, '4': 1, '5': 5, '10': 'year'},
+  ],
+};
+
+/// Descriptor for `GetYearInReviewRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getYearInReviewRequestDescriptor = $convert.base64Decode(
+    'ChZHZXRZZWFySW5SZXZpZXdSZXF1ZXN0EhsKCWNlbGxhcl9pZBgBIAEoBFIIY2VsbGFySWQSEg'
+    'oEeWVhchgCIAEoBVIEeWVhcg==');
+
+@$core.Deprecated('Use getYearInReviewResponseDescriptor instead')
+const GetYearInReviewResponse$json = {
+  '1': 'GetYearInReviewResponse',
+  '2': [
+    {'1': 'year_in_review', '3': 1, '4': 1, '5': 11, '6': '.api.v1.YearInReview', '10': 'yearInReview'},
+  ],
+};
+
+/// Descriptor for `GetYearInReviewResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getYearInReviewResponseDescriptor = $convert.base64Decode(
+    'ChdHZXRZZWFySW5SZXZpZXdSZXNwb25zZRI6Cg55ZWFyX2luX3JldmlldxgBIAEoCzIULmFwaS'
+    '52MS5ZZWFySW5SZXZpZXdSDHllYXJJblJldmlldw==');
+
+@$core.Deprecated('Use importUntappdCheckinsRequestDescriptor instead')
+const ImportUntappdCheckinsRequest$json = {
+  '1': 'ImportUntappdCheckinsRequest',
+  '2': [
+    {'1': 'cellar_id', '3': 1, '4': 1, '5': 4, '10': 'cellarId'},
+    {'1': 'csv_data', '3': 2, '4': 1, '5': 12, '10': 'csvData'},
+  ],
+};
+
+/// Descriptor for `ImportUntappdCheckinsRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List importUntappdCheckinsRequestDescriptor = $convert.base64Decode(
+    'ChxJbXBvcnRVbnRhcHBkQ2hlY2tpbnNSZXF1ZXN0EhsKCWNlbGxhcl9pZBgBIAEoBFIIY2VsbG'
+    'FySWQSGQoIY3N2X2RhdGEYAiABKAxSB2NzdkRhdGE=');
+
+@$core.Deprecated('Use importUntappdCheckinsResponseDescriptor instead')
+const ImportUntappdCheckinsResponse$json = {
+  '1': 'ImportUntappdCheckinsResponse',
+  '2': [
+    {'1': 'imported', '3': 1, '4': 1, '5': 5, '10': 'imported'},
+    {'1': 'skipped', '3': 2, '4': 1, '5': 5, '10': 'skipped'},
+    {'1': 'updated', '3': 3, '4': 1, '5': 5, '10': 'updated'},
+  ],
+};
+
+/// Descriptor for `ImportUntappdCheckinsResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List importUntappdCheckinsResponseDescriptor = $convert.base64Decode(
+    'Ch1JbXBvcnRVbnRhcHBkQ2hlY2tpbnNSZXNwb25zZRIaCghpbXBvcnRlZBgBIAEoBVIIaW1wb3'
+    'J0ZWQSGAoHc2tpcHBlZBgCIAEoBVIHc2tpcHBlZBIYCgd1cGRhdGVkGAMgASgFUgd1cGRhdGVk');
 
