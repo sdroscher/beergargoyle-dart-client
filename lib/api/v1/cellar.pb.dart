@@ -4062,6 +4062,204 @@ class MonthlyCount extends $pb.GeneratedMessage {
   void clearCount() => clearField(2);
 }
 
+class BiggestDay extends $pb.GeneratedMessage {
+  factory BiggestDay({
+    $core.String? date,
+    $fixnum.Int64? count,
+  }) {
+    final $result = create();
+    if (date != null) {
+      $result.date = date;
+    }
+    if (count != null) {
+      $result.count = count;
+    }
+    return $result;
+  }
+  BiggestDay._() : super();
+  factory BiggestDay.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory BiggestDay.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'BiggestDay', package: const $pb.PackageName(_omitMessageNames ? '' : 'api.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'date')
+    ..aInt64(2, _omitFieldNames ? '' : 'count')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  BiggestDay clone() => BiggestDay()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  BiggestDay copyWith(void Function(BiggestDay) updates) => super.copyWith((message) => updates(message as BiggestDay)) as BiggestDay;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static BiggestDay create() => BiggestDay._();
+  BiggestDay createEmptyInstance() => create();
+  static $pb.PbList<BiggestDay> createRepeated() => $pb.PbList<BiggestDay>();
+  @$core.pragma('dart2js:noInline')
+  static BiggestDay getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<BiggestDay>(create);
+  static BiggestDay? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get date => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set date($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasDate() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearDate() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $fixnum.Int64 get count => $_getI64(1);
+  @$pb.TagNumber(2)
+  set count($fixnum.Int64 v) { $_setInt64(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasCount() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearCount() => clearField(2);
+}
+
+class YearInReviewBeer extends $pb.GeneratedMessage {
+  factory YearInReviewBeer({
+    $fixnum.Int64? beerId,
+    $core.String? name,
+    $core.String? breweryName,
+    $core.String? styleName,
+    $core.double? abv,
+    $core.double? externalRating,
+    $fixnum.Int64? count,
+  }) {
+    final $result = create();
+    if (beerId != null) {
+      $result.beerId = beerId;
+    }
+    if (name != null) {
+      $result.name = name;
+    }
+    if (breweryName != null) {
+      $result.breweryName = breweryName;
+    }
+    if (styleName != null) {
+      $result.styleName = styleName;
+    }
+    if (abv != null) {
+      $result.abv = abv;
+    }
+    if (externalRating != null) {
+      $result.externalRating = externalRating;
+    }
+    if (count != null) {
+      $result.count = count;
+    }
+    return $result;
+  }
+  YearInReviewBeer._() : super();
+  factory YearInReviewBeer.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory YearInReviewBeer.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'YearInReviewBeer', package: const $pb.PackageName(_omitMessageNames ? '' : 'api.v1'), createEmptyInstance: create)
+    ..a<$fixnum.Int64>(1, _omitFieldNames ? '' : 'beerId', $pb.PbFieldType.OU6, defaultOrMaker: $fixnum.Int64.ZERO)
+    ..aOS(2, _omitFieldNames ? '' : 'name')
+    ..aOS(3, _omitFieldNames ? '' : 'breweryName')
+    ..aOS(4, _omitFieldNames ? '' : 'styleName')
+    ..a<$core.double>(5, _omitFieldNames ? '' : 'abv', $pb.PbFieldType.OD)
+    ..a<$core.double>(6, _omitFieldNames ? '' : 'externalRating', $pb.PbFieldType.OD)
+    ..aInt64(7, _omitFieldNames ? '' : 'count')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  YearInReviewBeer clone() => YearInReviewBeer()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  YearInReviewBeer copyWith(void Function(YearInReviewBeer) updates) => super.copyWith((message) => updates(message as YearInReviewBeer)) as YearInReviewBeer;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static YearInReviewBeer create() => YearInReviewBeer._();
+  YearInReviewBeer createEmptyInstance() => create();
+  static $pb.PbList<YearInReviewBeer> createRepeated() => $pb.PbList<YearInReviewBeer>();
+  @$core.pragma('dart2js:noInline')
+  static YearInReviewBeer getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<YearInReviewBeer>(create);
+  static YearInReviewBeer? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $fixnum.Int64 get beerId => $_getI64(0);
+  @$pb.TagNumber(1)
+  set beerId($fixnum.Int64 v) { $_setInt64(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasBeerId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearBeerId() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get name => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set name($core.String v) { $_setString(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasName() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearName() => clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get breweryName => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set breweryName($core.String v) { $_setString(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasBreweryName() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearBreweryName() => clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get styleName => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set styleName($core.String v) { $_setString(3, v); }
+  @$pb.TagNumber(4)
+  $core.bool hasStyleName() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearStyleName() => clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.double get abv => $_getN(4);
+  @$pb.TagNumber(5)
+  set abv($core.double v) { $_setDouble(4, v); }
+  @$pb.TagNumber(5)
+  $core.bool hasAbv() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearAbv() => clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.double get externalRating => $_getN(5);
+  @$pb.TagNumber(6)
+  set externalRating($core.double v) { $_setDouble(5, v); }
+  @$pb.TagNumber(6)
+  $core.bool hasExternalRating() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearExternalRating() => clearField(6);
+
+  @$pb.TagNumber(7)
+  $fixnum.Int64 get count => $_getI64(6);
+  @$pb.TagNumber(7)
+  set count($fixnum.Int64 v) { $_setInt64(6, v); }
+  @$pb.TagNumber(7)
+  $core.bool hasCount() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearCount() => clearField(7);
+}
+
 class YearInReview extends $pb.GeneratedMessage {
   factory YearInReview({
     $core.int? year,
@@ -4075,6 +4273,12 @@ class YearInReview extends $pb.GeneratedMessage {
     $core.Iterable<NameCount>? topBreweries,
     $core.Iterable<MonthlyCount>? byMonth,
     $core.Iterable<NameCount>? topCategories,
+    BiggestDay? biggestDay,
+    YearInReviewBeer? mostHadBeer,
+    YearInReviewBeer? strongestBeer,
+    YearInReviewBeer? gentlestBeer,
+    YearInReviewBeer? highestRatedBeer,
+    YearInReviewBeer? lowestRatedBeer,
   }) {
     final $result = create();
     if (year != null) {
@@ -4110,6 +4314,24 @@ class YearInReview extends $pb.GeneratedMessage {
     if (topCategories != null) {
       $result.topCategories.addAll(topCategories);
     }
+    if (biggestDay != null) {
+      $result.biggestDay = biggestDay;
+    }
+    if (mostHadBeer != null) {
+      $result.mostHadBeer = mostHadBeer;
+    }
+    if (strongestBeer != null) {
+      $result.strongestBeer = strongestBeer;
+    }
+    if (gentlestBeer != null) {
+      $result.gentlestBeer = gentlestBeer;
+    }
+    if (highestRatedBeer != null) {
+      $result.highestRatedBeer = highestRatedBeer;
+    }
+    if (lowestRatedBeer != null) {
+      $result.lowestRatedBeer = lowestRatedBeer;
+    }
     return $result;
   }
   YearInReview._() : super();
@@ -4128,6 +4350,12 @@ class YearInReview extends $pb.GeneratedMessage {
     ..pc<NameCount>(9, _omitFieldNames ? '' : 'topBreweries', $pb.PbFieldType.PM, subBuilder: NameCount.create)
     ..pc<MonthlyCount>(10, _omitFieldNames ? '' : 'byMonth', $pb.PbFieldType.PM, subBuilder: MonthlyCount.create)
     ..pc<NameCount>(11, _omitFieldNames ? '' : 'topCategories', $pb.PbFieldType.PM, subBuilder: NameCount.create)
+    ..aOM<BiggestDay>(12, _omitFieldNames ? '' : 'biggestDay', subBuilder: BiggestDay.create)
+    ..aOM<YearInReviewBeer>(13, _omitFieldNames ? '' : 'mostHadBeer', subBuilder: YearInReviewBeer.create)
+    ..aOM<YearInReviewBeer>(14, _omitFieldNames ? '' : 'strongestBeer', subBuilder: YearInReviewBeer.create)
+    ..aOM<YearInReviewBeer>(15, _omitFieldNames ? '' : 'gentlestBeer', subBuilder: YearInReviewBeer.create)
+    ..aOM<YearInReviewBeer>(16, _omitFieldNames ? '' : 'highestRatedBeer', subBuilder: YearInReviewBeer.create)
+    ..aOM<YearInReviewBeer>(17, _omitFieldNames ? '' : 'lowestRatedBeer', subBuilder: YearInReviewBeer.create)
     ..hasRequiredFields = false
   ;
 
@@ -4226,12 +4454,79 @@ class YearInReview extends $pb.GeneratedMessage {
 
   @$pb.TagNumber(11)
   $core.List<NameCount> get topCategories => $_getList(10);
+
+  @$pb.TagNumber(12)
+  BiggestDay get biggestDay => $_getN(11);
+  @$pb.TagNumber(12)
+  set biggestDay(BiggestDay v) { setField(12, v); }
+  @$pb.TagNumber(12)
+  $core.bool hasBiggestDay() => $_has(11);
+  @$pb.TagNumber(12)
+  void clearBiggestDay() => clearField(12);
+  @$pb.TagNumber(12)
+  BiggestDay ensureBiggestDay() => $_ensure(11);
+
+  @$pb.TagNumber(13)
+  YearInReviewBeer get mostHadBeer => $_getN(12);
+  @$pb.TagNumber(13)
+  set mostHadBeer(YearInReviewBeer v) { setField(13, v); }
+  @$pb.TagNumber(13)
+  $core.bool hasMostHadBeer() => $_has(12);
+  @$pb.TagNumber(13)
+  void clearMostHadBeer() => clearField(13);
+  @$pb.TagNumber(13)
+  YearInReviewBeer ensureMostHadBeer() => $_ensure(12);
+
+  @$pb.TagNumber(14)
+  YearInReviewBeer get strongestBeer => $_getN(13);
+  @$pb.TagNumber(14)
+  set strongestBeer(YearInReviewBeer v) { setField(14, v); }
+  @$pb.TagNumber(14)
+  $core.bool hasStrongestBeer() => $_has(13);
+  @$pb.TagNumber(14)
+  void clearStrongestBeer() => clearField(14);
+  @$pb.TagNumber(14)
+  YearInReviewBeer ensureStrongestBeer() => $_ensure(13);
+
+  @$pb.TagNumber(15)
+  YearInReviewBeer get gentlestBeer => $_getN(14);
+  @$pb.TagNumber(15)
+  set gentlestBeer(YearInReviewBeer v) { setField(15, v); }
+  @$pb.TagNumber(15)
+  $core.bool hasGentlestBeer() => $_has(14);
+  @$pb.TagNumber(15)
+  void clearGentlestBeer() => clearField(15);
+  @$pb.TagNumber(15)
+  YearInReviewBeer ensureGentlestBeer() => $_ensure(14);
+
+  @$pb.TagNumber(16)
+  YearInReviewBeer get highestRatedBeer => $_getN(15);
+  @$pb.TagNumber(16)
+  set highestRatedBeer(YearInReviewBeer v) { setField(16, v); }
+  @$pb.TagNumber(16)
+  $core.bool hasHighestRatedBeer() => $_has(15);
+  @$pb.TagNumber(16)
+  void clearHighestRatedBeer() => clearField(16);
+  @$pb.TagNumber(16)
+  YearInReviewBeer ensureHighestRatedBeer() => $_ensure(15);
+
+  @$pb.TagNumber(17)
+  YearInReviewBeer get lowestRatedBeer => $_getN(16);
+  @$pb.TagNumber(17)
+  set lowestRatedBeer(YearInReviewBeer v) { setField(17, v); }
+  @$pb.TagNumber(17)
+  $core.bool hasLowestRatedBeer() => $_has(16);
+  @$pb.TagNumber(17)
+  void clearLowestRatedBeer() => clearField(17);
+  @$pb.TagNumber(17)
+  YearInReviewBeer ensureLowestRatedBeer() => $_ensure(16);
 }
 
 class GetYearInReviewRequest extends $pb.GeneratedMessage {
   factory GetYearInReviewRequest({
     $fixnum.Int64? cellarId,
     $core.int? year,
+    $core.String? timeZone,
   }) {
     final $result = create();
     if (cellarId != null) {
@@ -4239,6 +4534,9 @@ class GetYearInReviewRequest extends $pb.GeneratedMessage {
     }
     if (year != null) {
       $result.year = year;
+    }
+    if (timeZone != null) {
+      $result.timeZone = timeZone;
     }
     return $result;
   }
@@ -4249,6 +4547,7 @@ class GetYearInReviewRequest extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetYearInReviewRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'api.v1'), createEmptyInstance: create)
     ..a<$fixnum.Int64>(1, _omitFieldNames ? '' : 'cellarId', $pb.PbFieldType.OU6, defaultOrMaker: $fixnum.Int64.ZERO)
     ..a<$core.int>(2, _omitFieldNames ? '' : 'year', $pb.PbFieldType.O3)
+    ..aOS(3, _omitFieldNames ? '' : 'timeZone')
     ..hasRequiredFields = false
   ;
 
@@ -4290,6 +4589,15 @@ class GetYearInReviewRequest extends $pb.GeneratedMessage {
   $core.bool hasYear() => $_has(1);
   @$pb.TagNumber(2)
   void clearYear() => clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get timeZone => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set timeZone($core.String v) { $_setString(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasTimeZone() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearTimeZone() => clearField(3);
 }
 
 class GetYearInReviewResponse extends $pb.GeneratedMessage {

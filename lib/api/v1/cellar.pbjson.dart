@@ -882,6 +882,45 @@ final $typed_data.Uint8List monthlyCountDescriptor = $convert.base64Decode(
     'CgxNb250aGx5Q291bnQSFAoFbW9udGgYASABKAVSBW1vbnRoEhQKBWNvdW50GAIgASgDUgVjb3'
     'VudA==');
 
+@$core.Deprecated('Use biggestDayDescriptor instead')
+const BiggestDay$json = {
+  '1': 'BiggestDay',
+  '2': [
+    {'1': 'date', '3': 1, '4': 1, '5': 9, '10': 'date'},
+    {'1': 'count', '3': 2, '4': 1, '5': 3, '10': 'count'},
+  ],
+};
+
+/// Descriptor for `BiggestDay`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List biggestDayDescriptor = $convert.base64Decode(
+    'CgpCaWdnZXN0RGF5EhIKBGRhdGUYASABKAlSBGRhdGUSFAoFY291bnQYAiABKANSBWNvdW50');
+
+@$core.Deprecated('Use yearInReviewBeerDescriptor instead')
+const YearInReviewBeer$json = {
+  '1': 'YearInReviewBeer',
+  '2': [
+    {'1': 'beer_id', '3': 1, '4': 1, '5': 4, '10': 'beerId'},
+    {'1': 'name', '3': 2, '4': 1, '5': 9, '10': 'name'},
+    {'1': 'brewery_name', '3': 3, '4': 1, '5': 9, '10': 'breweryName'},
+    {'1': 'style_name', '3': 4, '4': 1, '5': 9, '10': 'styleName'},
+    {'1': 'abv', '3': 5, '4': 1, '5': 1, '9': 0, '10': 'abv', '17': true},
+    {'1': 'external_rating', '3': 6, '4': 1, '5': 1, '9': 1, '10': 'externalRating', '17': true},
+    {'1': 'count', '3': 7, '4': 1, '5': 3, '10': 'count'},
+  ],
+  '8': [
+    {'1': '_abv'},
+    {'1': '_external_rating'},
+  ],
+};
+
+/// Descriptor for `YearInReviewBeer`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List yearInReviewBeerDescriptor = $convert.base64Decode(
+    'ChBZZWFySW5SZXZpZXdCZWVyEhcKB2JlZXJfaWQYASABKARSBmJlZXJJZBISCgRuYW1lGAIgAS'
+    'gJUgRuYW1lEiEKDGJyZXdlcnlfbmFtZRgDIAEoCVILYnJld2VyeU5hbWUSHQoKc3R5bGVfbmFt'
+    'ZRgEIAEoCVIJc3R5bGVOYW1lEhUKA2FidhgFIAEoAUgAUgNhYnaIAQESLAoPZXh0ZXJuYWxfcm'
+    'F0aW5nGAYgASgBSAFSDmV4dGVybmFsUmF0aW5niAEBEhQKBWNvdW50GAcgASgDUgVjb3VudEIG'
+    'CgRfYWJ2QhIKEF9leHRlcm5hbF9yYXRpbmc=');
+
 @$core.Deprecated('Use yearInReviewDescriptor instead')
 const YearInReview$json = {
   '1': 'YearInReview',
@@ -897,6 +936,12 @@ const YearInReview$json = {
     {'1': 'top_breweries', '3': 9, '4': 3, '5': 11, '6': '.api.v1.NameCount', '10': 'topBreweries'},
     {'1': 'by_month', '3': 10, '4': 3, '5': 11, '6': '.api.v1.MonthlyCount', '10': 'byMonth'},
     {'1': 'top_categories', '3': 11, '4': 3, '5': 11, '6': '.api.v1.NameCount', '10': 'topCategories'},
+    {'1': 'biggest_day', '3': 12, '4': 1, '5': 11, '6': '.api.v1.BiggestDay', '10': 'biggestDay'},
+    {'1': 'most_had_beer', '3': 13, '4': 1, '5': 11, '6': '.api.v1.YearInReviewBeer', '10': 'mostHadBeer'},
+    {'1': 'strongest_beer', '3': 14, '4': 1, '5': 11, '6': '.api.v1.YearInReviewBeer', '10': 'strongestBeer'},
+    {'1': 'gentlest_beer', '3': 15, '4': 1, '5': 11, '6': '.api.v1.YearInReviewBeer', '10': 'gentlestBeer'},
+    {'1': 'highest_rated_beer', '3': 16, '4': 1, '5': 11, '6': '.api.v1.YearInReviewBeer', '10': 'highestRatedBeer'},
+    {'1': 'lowest_rated_beer', '3': 17, '4': 1, '5': 11, '6': '.api.v1.YearInReviewBeer', '10': 'lowestRatedBeer'},
   ],
 };
 
@@ -910,7 +955,14 @@ final $typed_data.Uint8List yearInReviewDescriptor = $convert.base64Decode(
     'EuTmFtZUNvdW50Ugl0b3BTdHlsZXMSNgoNdG9wX2JyZXdlcmllcxgJIAMoCzIRLmFwaS52MS5O'
     'YW1lQ291bnRSDHRvcEJyZXdlcmllcxIvCghieV9tb250aBgKIAMoCzIULmFwaS52MS5Nb250aG'
     'x5Q291bnRSB2J5TW9udGgSOAoOdG9wX2NhdGVnb3JpZXMYCyADKAsyES5hcGkudjEuTmFtZUNv'
-    'dW50Ug10b3BDYXRlZ29yaWVz');
+    'dW50Ug10b3BDYXRlZ29yaWVzEjMKC2JpZ2dlc3RfZGF5GAwgASgLMhIuYXBpLnYxLkJpZ2dlc3'
+    'REYXlSCmJpZ2dlc3REYXkSPAoNbW9zdF9oYWRfYmVlchgNIAEoCzIYLmFwaS52MS5ZZWFySW5S'
+    'ZXZpZXdCZWVyUgttb3N0SGFkQmVlchI/Cg5zdHJvbmdlc3RfYmVlchgOIAEoCzIYLmFwaS52MS'
+    '5ZZWFySW5SZXZpZXdCZWVyUg1zdHJvbmdlc3RCZWVyEj0KDWdlbnRsZXN0X2JlZXIYDyABKAsy'
+    'GC5hcGkudjEuWWVhckluUmV2aWV3QmVlclIMZ2VudGxlc3RCZWVyEkYKEmhpZ2hlc3RfcmF0ZW'
+    'RfYmVlchgQIAEoCzIYLmFwaS52MS5ZZWFySW5SZXZpZXdCZWVyUhBoaWdoZXN0UmF0ZWRCZWVy'
+    'EkQKEWxvd2VzdF9yYXRlZF9iZWVyGBEgASgLMhguYXBpLnYxLlllYXJJblJldmlld0JlZXJSD2'
+    'xvd2VzdFJhdGVkQmVlcg==');
 
 @$core.Deprecated('Use getYearInReviewRequestDescriptor instead')
 const GetYearInReviewRequest$json = {
@@ -918,13 +970,14 @@ const GetYearInReviewRequest$json = {
   '2': [
     {'1': 'cellar_id', '3': 1, '4': 1, '5': 4, '10': 'cellarId'},
     {'1': 'year', '3': 2, '4': 1, '5': 5, '10': 'year'},
+    {'1': 'time_zone', '3': 3, '4': 1, '5': 9, '10': 'timeZone'},
   ],
 };
 
 /// Descriptor for `GetYearInReviewRequest`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List getYearInReviewRequestDescriptor = $convert.base64Decode(
     'ChZHZXRZZWFySW5SZXZpZXdSZXF1ZXN0EhsKCWNlbGxhcl9pZBgBIAEoBFIIY2VsbGFySWQSEg'
-    'oEeWVhchgCIAEoBVIEeWVhcg==');
+    'oEeWVhchgCIAEoBVIEeWVhchIbCgl0aW1lX3pvbmUYAyABKAlSCHRpbWVab25l');
 
 @$core.Deprecated('Use getYearInReviewResponseDescriptor instead')
 const GetYearInReviewResponse$json = {
